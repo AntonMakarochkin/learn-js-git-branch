@@ -1,33 +1,21 @@
-
-function checkAge(age) {
-  return (age > 18) ? true : confirm('Родители разрешили?')
+/* function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
 }
 
-function min(a, b) {
-  if ( a < b) {
-    return a
-  } else {
-    return b
-  }
-} 
+ask(
+  "Вы согласны?",
+  function() { alert("Вы согласились."); },
+  function() { alert("Вы отменили выполнение."); }
+); */
 
 
-function max(c, d) {
-  return c < d ? d : c;
+function ask (question, yes, no)  {
+  if (confirm(question)) yes()
+  else no()
 }
-
-function pow(x, n) {
-  let result = x
-  for(i=1; i<n; i++) {
-    result *=x
-  }
-  return result
-}
-
-let x = prompt("x?", '');
-let n = prompt("n?", '');
-if (n < 1) {
-  alert(`Степень ${n} не поддерживается, используйте натуральное число`);
-} else {
-  alert( pow(x, n) );
-}
+ask(
+  'Вы согласны?',
+    () => alert('вы согалсились'),
+    () => alert('вы отменили'),
+)
