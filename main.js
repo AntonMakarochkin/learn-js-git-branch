@@ -31,3 +31,23 @@ if (n < 1) {
 } else {
   alert( pow(x, n) );
 }
+
+
+let calculator = {
+  read() {
+    this.firstNumber = +prompt('первое число',"")
+    this.secondNumber = +prompt('второе число', "")
+  },
+
+  sum() {
+      return this.firstNumber + this.secondNumber
+  },
+  mul() {
+    return this.firstNumber * this.secondNumber
+  }
+}
+
+calculator.read()
+
+console.log(calculator.sum())
+console.log(calculator.mul())
