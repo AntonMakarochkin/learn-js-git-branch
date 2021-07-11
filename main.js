@@ -1,21 +1,15 @@
-/* function ask(question, yes, no) {
-  if (confirm(question)) yes()
-  else no();
+
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+function multiple(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] == 'number') obj[key] *= 2
+  }
 }
+multiple(menu)
 
-ask(
-  "Вы согласны?",
-  function() { alert("Вы согласились."); },
-  function() { alert("Вы отменили выполнение."); }
-); */
-
-
-function ask (question, yes, no)  {
-  if (confirm(question)) yes()
-  else no()
-}
-ask(
-  'Вы согласны?',
-    () => alert('вы согалсились'),
-    () => alert('вы отменили'),
-)
+console.log(menu)
