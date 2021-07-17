@@ -1,159 +1,192 @@
-/* 
-function checkAge(age) {
-  return (age > 18) ? true : confirm('Родители разрешили?')
-}
+/* let arr = [1, 2, 3]
 
-function min(a, b) {
-  if ( a < b) {
-    return a
-  } else {
-    return b
+arr.splice(0,1, 5,4,3 )
+
+console.log(arr)
+
+
+arr.splice(5,0, 4,5,6,7,8,9,10)
+console.log(arr)
+ */
+
+/*   let arr = [1, 2, 5];
+
+
+  arr.splice(-1, 0, 3, 4);
+  let y = arr
+  alert( arr ); 
+
+  let x = arr.slice()
+  console.log(y == x)
+ */
+
+
+/*   function camelize(str) {
+    return str
+        .split('-')
+        .map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1))
+        .join('')                      
   }
-} 
+
+  console.log(camelize("background-color")) */
 
 
-function max(c, d) {
-  return c < d ? d : c;
-}
+/*   function filterRangeInPlace(arr, a, b) {
 
-function pow(x, n) {
-  let result = x
-  for(i=1; i<n; i++) {
-    result *=x
+    for (let i = 0; i < arr.length; i++) {
+      let value = arr[i]
+      if (value < a || value > b) {
+
+        arr.splice(i, 1) 
+        i--
+
+      }
+    }
   }
-  return result
-}
-
-let x = prompt("x?", '');
-let n = prompt("n?", '');
-if (n < 1) {
-  alert(`Степень ${n} не поддерживается, используйте натуральное число`);
-} else {
-  alert( pow(x, n) );
-}
-
-
-let calculator = {
-  read() {
-    this.firstNumber = +prompt('первое число',"")
-    this.secondNumber = +prompt('второе число', "")
-  },
-
-  sum() {
-      return this.firstNumber + this.secondNumber
-  },
-  mul() {
-    return this.firstNumber * this.secondNumber
-  }
-}
-
-calculator.read()
-
-console.log(calculator.sum())
-console.log(calculator.mul()) */
-
-/* function Calculator() {
-  this.read = function() {
-    this.firstNumber = +prompt('first', '')
-    this.secondNumber = +prompt('second', '')
-  }
-  this.sum = function() {
-    return this.firstNumber + this.secondNumber
-  }
-   this.multiple = function() {
-     return this.firstNumber * this.secondNumber
-   }
+  
+  let arr = [5, 3, 8, 1];
 
   
-}
+  filterRangeInPlace(arr, 1, 4); 
+  
+  alert( arr );  */
 
-let calculator = new Calculator()
 
-calculator.read() */
 
 /* 
-function Accumulator(staringValue) {
-  this.value = staringValue
-
-  this.read = function() {
-    this.value += +prompt('first', '')
-  }
-}
-
-let accum = new Accumulator(2)
-
-accum.read()
-accum.read()
-
-console.log(accum.value)
-
- */
+  let arr = [5, 2, 1, -10, 8];
 
 
+ arr.sort((a, b) => b - a)
 
-/* let target = 'xxx'
-let targetV = 'viagra'
-function checkSpam(str) {
-  let checkStr = str.toLowerCase()
-  pos = 0
-  return checkStr.includes(target) || checkStr.includes(targetV)
-}
-
-console.log(checkSpam('asdasd vIagra asdasd')) */
+ console.log(arr) */
 
 
+/*  let arr = ["HTML", "JavaScript", "CSS"];
 
-/* function truncate(str, maxlength) {
-  let strLenght = str.length 
- if (strLenght > maxlength) return str.slice(0, maxlength - 1) + '...' 
- str
-}
-
-
-console.log(truncate('lova bumbastic imato lova lova bumbastic', 10)) */
-
-
-/* function extractCurrencyValue(str) {
- return +str.slice(1)
+ function sorty(arr) {
+      return arr.slice().sort()
  }
- console.log(extractCurrencyValue('#100'))
 
+ let newArr = sorty(arr)
+
+ console.log(newArr)
+ console.log(arr) */
+
+/* 
+ let vasya = { name: "Вася", age: 25 };
+ let petya = { name: "Петя", age: 30 };
+ let masha = { name: "Маша", age: 28 };
+ 
+ let users = [ vasya, petya, masha ];
+ let names = users.map((item) => item.name)
+
+
+
+
+console.log(users == names)
+console.log(names)
+  */
+
+
+/* let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+let petya = { name: "Петя", surname: "Иванов", id: 2 };
+let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+let users = [ vasya, petya, masha ];
+
+
+let fullUsers = users.map((item) => ({
+  fullname: `${item.name} ${item.surname}`,
+  id: `${item.id}`
+
+
+}))
+
+console.log(fullUsers) */
+
+
+/* let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let arr = [ vasya, petya, masha ];
+
+arr.sort((a, b) => a.age > b.age ? 1 : -1)
+console.log(arr) */
+
+
+/* let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 29 };
+
+let arr = [ vasya, petya, masha ];
+
+
+function getAge(arr) {
+  return arr.reduce((sum, item) => item.age + sum, 0) / arr.length
+}
+
+
+alert(getAge(arr)); // 1
  */
 
 
-
-
-
-/* function sumInput(){
-   let arr = []
-
-   while(true) {
-     let number = prompt('n', '')
-     if (number === '' || number === null || !isFinite(number)) break
-     arr.push(+number)
-   }
-
-   let sum = 0
-   for (let key of arr) {
-     sum += key
-   }
-   return sum
+/* let strings = ["кришна", "кришна", "харе", "харе",
+  "харе", "харе", "кришна", "кришна", ":-O"
+];
+let result = []
+function filterArr(arr) {
+  for (let key of arr) {
+    if (!result.includes(key)) result.push(key)
   }
-alert( sumInput() );   */
+  return result
+} 
 
+console.log(filterArr(strings)) */
 
-
-/* function getMaxSubSum(arr) {
-  maxSum = 0
-  currentNumber = 0
+/* 
+function aclean(arr) {
+ let map = new Map()
 
   for (let key of arr) {
-    currentNumber += key
-    if (currentNumber < 0) currentNumber = 0
-    maxSum = Math.max(currentNumber, maxSum)
+    let sorted = key.toLowerCase().split('').sort().join('')
+    map.set(sorted, key)
   }
-  return maxSum
-
+  return Array.from(map.values())
 
 }
-console.log( getMaxSubSum([-1, 2, 3, -9, 2, 4]) ); // 6 */
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+alert( aclean(arr) );
+
+console.log(arr) */
+
+
+/* let map = new Map();
+
+map.set("name", "John");
+
+let keys = Array.from(map.keys())
+
+keys.push("more");
+
+console.log(keys)
+
+ */
+
+let map = new Map();
+map.set('banana', 1);
+map.set('orange', 2);
+map.set('meat', 4);
+
+let obj = Object.fromEntries(map); 
+
+
+alert(obj.orange); // 2
+
+
+
+
+ 
