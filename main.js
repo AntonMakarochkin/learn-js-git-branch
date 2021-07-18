@@ -176,7 +176,7 @@ console.log(keys)
 
  */
 
-let map = new Map();
+/* let map = new Map();
 map.set('banana', 1);
 map.set('orange', 2);
 map.set('meat', 4);
@@ -184,9 +184,78 @@ map.set('meat', 4);
 let obj = Object.fromEntries(map); 
 
 
-alert(obj.orange); // 2
+alert(obj.orange); // 2 */
 
 
 
+/* let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
 
- 
+
+function sumSalaries(obj) {
+  
+  let sum = 0
+  for (let key of Object.values(obj)) {
+    sum = sum + key
+  }
+  return sum
+
+
+}
+alert( sumSalaries(salaries) ); // 650
+
+// у нас есть массив с именем и фамилией
+let arr = ["Ilya", "Kantor"]
+
+// деструктурирующее присваивание
+// записывает firstName=arr[0], surname=arr[1]
+let [firstName, surname] = arr;
+
+alert(firstName); // Ilya
+alert(surname);  // Kantor 
+
+
+
+let options = {
+  title: "Menu",
+  width: 100,
+  height: 200
+};
+
+let {title, width, height} = options;
+
+alert(title);   */
+
+
+let user = {
+  name: "John",
+  years: 30
+};
+
+let {name, age, isAdmin = false} = user
+
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+function topSalary(salaries) {
+  max = 0
+  maxName = null
+
+  for(const [name, salary] of Object.entries(salaries)) {
+    if (salary > max) {
+      max = salary
+      maxName = name
+    }
+  }
+  return maxName
+
+}
+
+console.log(topSalary(salaries))
