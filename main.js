@@ -1,261 +1,252 @@
-/* let arr = [1, 2, 3]
-
-arr.splice(0,1, 5,4,3 )
-
-console.log(arr)
-
-
-arr.splice(5,0, 4,5,6,7,8,9,10)
-console.log(arr)
- */
-
-/*   let arr = [1, 2, 5];
-
-
-  arr.splice(-1, 0, 3, 4);
-  let y = arr
-  alert( arr ); 
-
-  let x = arr.slice()
-  console.log(y == x)
- */
-
-
-/*   function camelize(str) {
-    return str
-        .split('-')
-        .map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1))
-        .join('')                      
+"use strict"
+/* function sumTo(io) {
+  let sum = 0
+  for( let i = io; i > 0; i-- ) {
+    sum += i
   }
+  return sum
+}
 
-  console.log(camelize("background-color")) */
+console.log(sumTo(100)) */
 
 
-/*   function filterRangeInPlace(arr, a, b) {
-
-    for (let i = 0; i < arr.length; i++) {
-      let value = arr[i]
-      if (value < a || value > b) {
-
-        arr.splice(i, 1) 
-        i--
-
+/* let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
       }
     }
   }
-  
-  let arr = [5, 3, 8, 1];
+};
+
+function printList(list){ 
 
   
-  filterRangeInPlace(arr, 1, 4); 
-  
-  alert( arr );  */
-
-
-
-/* 
-  let arr = [5, 2, 1, -10, 8];
-
-
- arr.sort((a, b) => b - a)
-
- console.log(arr) */
-
-
-/*  let arr = ["HTML", "JavaScript", "CSS"];
-
- function sorty(arr) {
-      return arr.slice().sort()
- }
-
- let newArr = sorty(arr)
-
- console.log(newArr)
- console.log(arr) */
-
-/* 
- let vasya = { name: "Вася", age: 25 };
- let petya = { name: "Петя", age: 30 };
- let masha = { name: "Маша", age: 28 };
- 
- let users = [ vasya, petya, masha ];
- let names = users.map((item) => item.name)
-
-
-
-
-console.log(users == names)
-console.log(names)
-  */
-
-
-/* let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
-let petya = { name: "Петя", surname: "Иванов", id: 2 };
-let masha = { name: "Маша", surname: "Петрова", id: 3 };
-
-let users = [ vasya, petya, masha ];
-
-
-let fullUsers = users.map((item) => ({
-  fullname: `${item.name} ${item.surname}`,
-  id: `${item.id}`
-
-
-}))
-
-console.log(fullUsers) */
-
-
-/* let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 28 };
-
-let arr = [ vasya, petya, masha ];
-
-arr.sort((a, b) => a.age > b.age ? 1 : -1)
-console.log(arr) */
-
-
-/* let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 29 };
-
-let arr = [ vasya, petya, masha ];
-
-
-function getAge(arr) {
-  return arr.reduce((sum, item) => item.age + sum, 0) / arr.length
+  if (list.next) {
+    printList(list.next)
+  }
+  console.log(list.value)
 }
 
+printList(list)
 
-alert(getAge(arr)); // 1
+
+function sum (a) {
+  return function (b) {
+    return a + b
+  }
+}
+
+console.log(sum(3)(1))
+let arr = [1, 2, 3, 4, 5, 6, 7];
+function inBetween(a, b) {
+  return function(x) {
+    return x >= a && x <= b
+  }
+}
+
+function inArray(arr) {
+  return function(x) {
+    return arr.includes(x)
+  }
+}
+
+console.log(arr.filter(inBetween(3, 6)))
  */
 
 
-/* let strings = ["кришна", "кришна", "харе", "харе",
-  "харе", "харе", "кришна", "кришна", ":-O"
-];
-let result = []
-function filterArr(arr) {
-  for (let key of arr) {
-    if (!result.includes(key)) result.push(key)
+
+
+/* function byField(field) {
+  return  (a, b) => a[field] > b[field] ? 1 : -1  
+} */
+
+
+/* function makeArmy() {
+  let shooters = []
+  let i = 0
+
+  while(i < 10) {
+    let j = i
+    let shooter = function() {
+      console.log(j)
+    }
+    shooters.push(shooter)
+    i++
   }
-  return result
-} 
-
-console.log(filterArr(strings)) */
-
-/* 
-function aclean(arr) {
- let map = new Map()
-
-  for (let key of arr) {
-    let sorted = key.toLowerCase().split('').sort().join('')
-    map.set(sorted, key)
-  }
-  return Array.from(map.values())
-
+  return shooters
 }
 
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+let army = makeArmy()
 
-alert( aclean(arr) );
+army[5]() */
+/* function ask(question, ...handlers) {
+  let isYes = confirm(question);
 
-console.log(arr) */
-
-
-/* let map = new Map();
-
-map.set("name", "John");
-
-let keys = Array.from(map.keys())
-
-keys.push("more");
-
-console.log(keys)
-
- */
-
-/* let map = new Map();
-map.set('banana', 1);
-map.set('orange', 2);
-map.set('meat', 4);
-
-let obj = Object.fromEntries(map); 
-
-
-alert(obj.orange); // 2 */
-
-
-
-/* let salaries = {
-  "John": 100,
-  "Pete": 300,
-  "Mary": 250
-};
-
-
-function sumSalaries(obj) {
-  
-  let sum = 0
-  for (let key of Object.values(obj)) {
-    sum = sum + key
-  }
-  return sum
-
-
-}
-alert( sumSalaries(salaries) ); // 650
-
-// у нас есть массив с именем и фамилией
-let arr = ["Ilya", "Kantor"]
-
-// деструктурирующее присваивание
-// записывает firstName=arr[0], surname=arr[1]
-let [firstName, surname] = arr;
-
-alert(firstName); // Ilya
-alert(surname);  // Kantor 
-
-
-
-let options = {
-  title: "Menu",
-  width: 100,
-  height: 200
-};
-
-let {title, width, height} = options;
-
-alert(title);   */
-
-
-let user = {
-  name: "John",
-  years: 30
-};
-
-let {name, age, isAdmin = false} = user
-
-
-let salaries = {
-  "John": 100,
-  "Pete": 300,
-  "Mary": 250
-};
-
-function topSalary(salaries) {
-  max = 0
-  maxName = null
-
-  for(const [name, salary] of Object.entries(salaries)) {
-    if (salary > max) {
-      max = salary
-      maxName = name
+  for(let handler of handlers) {
+    if (handler.length == 0) {
+      if (isYes) handler();
+    } else {
+      handler(isYes);
     }
   }
-  return maxName
 
 }
+ask("Вопрос?", () => alert('Вы ответили да'), result => alert(result)); */
 
-console.log(topSalary(salaries))
+/* function makeCounter() {
+  function counter() {
+    return counter.count++
+  }
+  counter.count = 1
+  return counter
+
+
+}
+let x = makeCounter() 
+console.log(x.count) */
+
+
+
+/* let sayHi = function func(who) {
+  if (who) {
+    alert(`hello ${who}`)
+  } else {
+    func('guest')
+  }
+}
+
+sayHi() */
+
+/* function makeCounter() {
+  
+  let count = 0;
+  function counter() {
+    return count++;
+  }
+
+  counter.set = value => count = value;
+
+  counter.decrease = () => count--;
+
+  return counter;
+}
+
+let counter = makeCounter()
+
+console.log(counter.set(10))
+console.log(counter())
+console.log(counter())
+ */
+
+
+/* let arr1 = [7, 0, 6, 4, 2, 4]
+let arr2 = [2, 6, 3, 4, 5, 6, 7]
+let arr3 = [7, 6, 5, 3, 3]
+
+
+function buyA(arr) {
+  let minPrice = arr[0]
+  let maxProfit = 0
+
+  for (let i = 0; i < arr.length; i++) {
+    let current = arr[i]
+
+    if (current < minPrice) {
+      minPrice = current
+    }
+    if (current - minPrice > maxProfit) {
+      maxProfit = current - minPrice
+    }
+  }
+  return maxProfit
+}
+
+
+console.log(arr1, buyA(arr1))
+
+
+ */
+
+
+/* 
+function pN(from, to) {
+
+    setTimeout(function tick(){
+      console.log(from)
+      if (from < to) {
+        setTimeout(tick, 1000)
+      }
+      from++
+    }, 1000) 
+  
+
+}
+pN(1, 10) */
+
+
+
+
+/* let arr1 = [2, 4, 4, 1, 6]
+let arr2 = [2, 4, 3, 3, 5, 6, 4]
+
+
+function intersec (arr1, arr2) {
+ let result = []
+
+ let map = arr1.reduce((acc, item) => {
+   acc[item] = acc[item] ? acc[item] + 1 : 1
+   return acc
+ }, {})
+
+ for(let i = 0; i < arr2.length; i++) {
+   let current = arr2[i]
+   let count = map[current]
+
+   if (count && count > 0) {
+     result.push(current)
+     map[current] -= 1
+
+   }
+ }
+
+ return result
+}
+
+console.log(intersec(arr1, arr2))
+ */
+
+/* let str = 'keaakce'
+
+function firstS(str) {
+ let map = new Map()
+
+  for (let i = 0; i < str.length; i++) {
+    let current = str[i]
+    if (map.has(current)) map.set(current, map.get(current) + 1)
+    else map.set(current, 1)
+  } 
+  for (let i = 0; i < str.length; i++) {
+    if (map.get(str[i]) === 1) return i
+  }
+  return -1
+}
+console.log(firstS(str)) */
+
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+    this.students.forEach(
+      student => alert(this.title + ': ' + student)
+    );
+  }
+};
+
+group.showList(); 
